@@ -1,33 +1,33 @@
-# <img src="images/pyxel_logo_152x64.png">
+# <img src="doc/images/pyxel_logo_152x64.png">
 
-[ [English](README.md) | [中文](README.cn.md) | [Deutsch](README.de.md) | [Español](README.es.md) | [Français](README.fr.md) | [Italiano](README.it.md) | [日本語](README.ja.md) | [한국어](README.ko.md) | [Português](README.pt.md) | [Русский](README.ru.md) ]
+[ [English](README.md) | [中文](doc/README.cn.md) | [Deutsch](doc/README.de.md) | [Español](doc/README.es.md) | [Français](doc/README.fr.md) | [Italiano](doc/README.it.md) | [日本語](doc/README.ja.md) | [한국어](doc/README.ko.md) | [Português](doc/README.pt.md) | [Русский](doc/README.ru.md) ]
 
 **Pyxel** is a retro game engine for Python.
 
 Thanks to its simple specifications inspired by retro gaming consoles, such as only 16 colors can be displayed and only 4 sounds can be played back at the same time, you can feel free to enjoy making pixel art style games.
 
 <a href="pyxel/examples/01_hello_pyxel.py" target="_blank">
-<img src="pyxel/examples/screenshots/01_hello_pyxel.gif" width="48%">
+<img src="doc/images/01_hello_pyxel.gif" width="48%">
 </a>
 
 <a href="pyxel/examples/02_jump_game.py" target="_blank">
-<img src="pyxel/examples/screenshots/02_jump_game.gif" width="48%">
+<img src="doc/images/02_jump_game.gif" width="48%">
 </a>
 
 <a href="pyxel/examples/03_draw_api.py" target="_blank">
-<img src="pyxel/examples/screenshots/03_draw_api.gif" width="48%">
+<img src="doc/images/03_draw_api.gif" width="48%">
 </a>
 
 <a href="pyxel/examples/04_sound_api.py" target="_blank">
-<img src="pyxel/examples/screenshots/04_sound_api.gif" width="48%">
+<img src="doc/images/04_sound_api.gif" width="48%">
 </a>
 
-<a href="pyxel/editor/screenshots/image_tilemap_editor.gif" target="_blank">
-<img src="pyxel/editor/screenshots/image_tilemap_editor.gif" width="48%">
+<a href="doc/images/image_tilemap_editor.gif" target="_blank">
+<img src="doc/images/image_tilemap_editor.gif" width="48%">
 </a>
 
-<a href="pyxel/editor/screenshots/sound_music_editor.gif" target="_blank">
-<img src="pyxel/editor/screenshots/sound_music_editor.gif" width="48%">
+<a href="doc/images/sound_music_editor.gif" target="_blank">
+<img src="doc/images/sound_music_editor.gif" width="48%">
 </a>
 
 The specifications of Pyxel are referring to awesome [PICO-8](https://www.lexaloffle.com/pico-8.php) and [TIC-80](https://tic.computer/).
@@ -48,9 +48,9 @@ Pyxel is open source and free to use. Let's start making a retro game with Pyxel
 
 ### Color Palette
 
-<img src="pyxel/examples/screenshots/05_color_palette.png">
-<br><br>
-<img src="images/pyxel_palette.png">
+<img src="doc/images/05_color_palette.png">
+
+<img src="doc/images/pyxel_palette.png">
 
 ## How to Install
 
@@ -83,7 +83,7 @@ pip3 install -U pyxel
 After installing the SDL2 package (`libsdl2-dev` for Ubuntu), [Python3](https://www.python.org/) (version 3.7 or higher), and `python3-pip`, run the following command:
 
 ```sh
-pip3 install -U pyxel
+sudo pip3 install -U pyxel
 ```
 
 If the above doesn't work, try self-building by following the steps below after installing `cmake` and `rust`:
@@ -91,8 +91,8 @@ If the above doesn't work, try self-building by following the steps below after 
 ```sh
 git clone https://github.com/kitao/pyxel.git
 cd pyxel
-make clean all RELEASE=1
-pip3 install .
+make clean all
+sudo pip3 install .
 ```
 
 ### Install Standalone Version
@@ -116,7 +116,7 @@ brew install pyxel
 
 **Linux**
 
-After installing the SDL2 package (`libsdl2-dev` for Ubuntu) and installing [Homebrew](https://docs.brew.sh/Homebrew-on-Linux), run the following commands:
+After installing the SDL2 package (`libsdl2-dev` for Ubuntu) and installing [Homebrew](https://brew.sh/), run the following commands:
 
 ```sh
 brew tap kitao/pyxel
@@ -281,7 +281,7 @@ Pyxel Editor has the following edit modes.
 
 The mode to edit the image banks.
 
-<img src="pyxel/editor/screenshots/image_editor.gif">
+<img src="doc/images/image_editor.gif">
 
 By dragging and dropping an image file (png/gif/jpeg) onto the Image Editor screen, the image can be loaded into the currently selected image bank.
 
@@ -289,19 +289,19 @@ By dragging and dropping an image file (png/gif/jpeg) onto the Image Editor scre
 
 The mode to edit tilemaps in which images of the image banks are arranged in a tile pattern.
 
-<img src="pyxel/editor/screenshots/tilemap_editor.gif">
+<img src="doc/images/tilemap_editor.gif">
 
 **Sound Editor:**
 
 The mode to edit sounds.
 
-<img src="pyxel/editor/screenshots/sound_editor.gif">
+<img src="doc/images/sound_editor.gif">
 
 **Music Editor:**
 
 The mode to edit musics in which the sounds are arranged in order of playback.
 
-<img src="pyxel/editor/screenshots/music_editor.gif">
+<img src="doc/images/music_editor.gif">
 
 ### Other Resource Creation Methods
 
@@ -436,7 +436,7 @@ Draw the outline of a triangle with vertices (`x1`, `y1`), (`x2`, `y2`), (`x3`, 
 - `blt(x, y, img, u, v, w, h, [colkey])`<br>
 Copy the region of size (`w`, `h`) from (`u`, `v`) of the image bank `img` (0-2) to (`x`, `y`). If negative value is set for `w` and/or `h`, it will reverse horizontally and/or vertically. If `colkey` is specified, treated as transparent color.
 
-<img src="images/image_bank_mechanism.png">
+<img src="doc/images/image_bank_mechanism.png">
 
 - `bltm(x, y, tm, u, v, w, h, [colkey])`<br>
 Draw the tilemap `tm` (0-7) to (`x`, `y`) according to the tile information of size (`w`, `h`) from (`u`, `v`). If `colkey` is specified, treated as transparent color. The size of a tile is 8x8 pixels and is stored in a tilemap as a tuple of `(x in tile, y in tile)`.
@@ -575,4 +575,4 @@ Submitted pull request is deemed to have agreed to publish under [MIT License](L
 
 ## License
 
-Pyxel is under [MIT License](http://en.wikipedia.org/wiki/MIT_License). It can be reused within proprietary software, provided that all copies of the software or its substantial portions include a copy of the terms of the MIT License and also a copyright notice.
+Pyxel is under [MIT License](LICENSE). It can be reused within proprietary software, provided that all copies of the software or its substantial portions include a copy of the terms of the MIT License and also a copyright notice.

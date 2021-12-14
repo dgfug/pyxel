@@ -19,19 +19,20 @@
 #   make format
 #
 # Debug build:
-#   make clean all
+#   make clean all DEBUG=1
 #
 # Debug build and test:
-#   make clean test
+#   make clean test DEBUG=1
 #
 # Release build:
-#   make clean all RELEASE=1
+#   make clean all
 #
 # Release build and test:
-#   make clean test RELEASE=1
+#   make clean test
 #
 # Install Python pakcage after release build:
 #   pip3 install .
+#   (Prefix `sudo` for Linux)
 #
 # Make Python wheel after release build:
 #   make wheel
@@ -39,11 +40,11 @@
 # Make Pyxel distributions using Python wheel:
 #   make dist
 #
-# Make Pyxel installer using Windows package:
+# Make Pyxel installer using Windows distribution:
 #   Build native/setup.iss with Inno Setup
 #
 
-FORWARD_DIR = native
+FORWARD_DIR = lib
 
 .PHONY: forward $(MAKECMDGOALS)
 
